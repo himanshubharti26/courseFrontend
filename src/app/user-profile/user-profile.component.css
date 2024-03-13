@@ -22,7 +22,7 @@
     padding: 4px 16px;
 }
 .card-info > p{
-    line-height: 0.5;
+    line-height: 1;
 }
 
 .toast-message{
