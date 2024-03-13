@@ -1,0 +1,14 @@
+<div>
+    <h2>Enrolled Courses</h2>
+    <ul>
+      <li *ngFor="let course of enrolledCourses">
+        <div>
+            <img [src]="course.image" alt="{{ course.title }}">
+        </div>
+        <p>Title: {{course.title}}</p>
+        <p>Instructor: {{course.instructor}}</p>
+        <p>Rating: {{course.rating}}</p>
+        <p>Progress: {{course.progress}}</p>
+    </li>
+    </ul>
+  </div>

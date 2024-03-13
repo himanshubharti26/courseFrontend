@@ -1,0 +1,18 @@
+<div>
+    <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="searchCourses()">
+    <button (click)="filterCourses('price')">Sort by Price</button>
+    <button (click)="filterCourses('rating')">Sort by Rating</button>
+    <button (click)="filterCourses('category')">Sort by Category</button>
+</div>
+
+<div *ngFor="let course of filteredCourses">
+    <div>
+        <img [src]="course.image" alt="{{ course.title }}">
+    </div>
+    <div>
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+        <p>Instructor: {{ course.instructor }}</p>
+        <p>Rating: {{ course.rating }}</p>
+    </div>
+</div>
