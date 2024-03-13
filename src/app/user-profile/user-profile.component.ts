@@ -3,6 +3,7 @@ import { UserService } from '../services/user.service';
 import { EnrolledCourse } from '../models/enrolledCourse.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CourseService } from '../services/course.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -13,19 +14,38 @@ import { CommonModule } from '@angular/common';
 })
 
 
-export class UserProfileComponent implements OnInit{
-  constructor(private userService:UserService){}
+export class UserProfileComponent implements OnInit {
+
+  constructor(private userService: UserService) { }
   userId = "81d4b8cf-e198-4663-9447-059f40f0fb98"
-  enrolledCourses:EnrolledCourse[] = [];
+  enrolledCourses: EnrolledCourse[] = [];
+  totastMessage: string = "";
+  showMessage:boolean = false;
+
   ngOnInit(): void {
     this.getUserCourses(this.userId);
   }
 
-  getUserCourses(userId:string):void{
-    this.userService.getUserCourses(userId).subscribe((courses:any)=>{
+  getUserCourses(userId: string): void {
+    this.userService.getUserCourses(userId).subscribe((courses: any) => {
       console.log("enrolled courses:", courses);
       this.enrolledCourses = courses;
     })
   }
-  
+
+  unEnrollUser(courseId: number, title: string) {
+    console.log("in enroll function");
+    this.userService.unEnrollUser(this.userId, courseId).subscribe(data => {
+      console.log("Unenrolled successfully", data);
+      this.totastMessage = `Unenrolled from ${title}  successfully !!!`;
+      this.showToast()
+      this.getUserCourses(this.userId);
+    });
+  }
+  showToast(){
+    this.showMessage= true;
+    setTimeout(()=>{
+      this.showMessage= false;
+    }, 5000);
+  }
 }

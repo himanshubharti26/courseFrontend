@@ -1,18 +1,39 @@
-<div>
-    <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="searchCourses()">
-    <button (click)="filterCourses('price')">Sort by Price</button>
-    <button (click)="filterCourses('rating')">Sort by Rating</button>
-    <button (click)="filterCourses('category')">Sort by Category</button>
+
+<div class="page-heading">
+    <h1>Courses</h1>
+</div>
+<div class="searchInput">
+    <div class="filter-buttons">
+        <button (click)="filterCourses('price')">Sort by Price</button>
+        <button (click)="filterCourses('rating')">Sort by Rating</button>
+        <button (click)="filterCourses('category')">Sort by Category</button>
+    </div>
+    <div class="search-container">
+    <input class="search-course" type="text" placeholder="Search ..." [(ngModel)]="searchTerm" (input)="searchCourses()">
+    <img src="../../assets/magnifying-glass-solid.svg" alt="search" height="15px" width="15px">
+    </div>
 </div>
 
-<div *ngFor="let course of filteredCourses">
-    <div>
-        <img [src]="course.image" alt="{{ course.title }}">
+<div class="course-container">
+<div *ngFor="let course of filteredCourses"  class="course-box">
+    <div style="border-radius: 100px; height: 60%; width: 100%;">
+        <img [src]="course.image" alt="{{ course.title }}" height="100%" width="100%">
     </div>
-    <div>
+    <div class="card-info">
         <h3>{{ course.title }}</h3>
         <p>{{ course.description }}</p>
-        <p>Instructor: {{ course.instructor }}</p>
-        <p>Rating: {{ course.rating }}</p>
+        <p><span>Instructor</span>: {{ course.instructor }}</p>
+        <p><span>Rating</span>: {{ course.rating }}</p>
+        <p><span>Price</span>: {{course.price}}</p>
+        <div class="en-btn">
+            <button (click)="enrollUser(course.courseId, course.title)"> Enroll </button>
+        </div>
     </div>
 </div>
+</div>
+
+@if(showMessage){
+    <div class="toast-message">
+      <p>{{totastMessage}}</p>
+    </div>
+}

@@ -4,6 +4,7 @@ import { Course } from '../models/course.model';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-course-catalog',
@@ -18,7 +19,15 @@ export class CourseCatalogComponent implements OnInit {
   courses:Course[] = [];
   filteredCourses:Course[] = [];
   searchTerm:string = "";
-  constructor(private courseService:CourseService){}
+  //we don't have login system that's why I am hard coding the user id
+  userId = "81d4b8cf-e198-4663-9447-059f40f0fb98"
+  showMessage:boolean = false;
+  totastMessage:string = "";
+
+  constructor(
+    private courseService:CourseService,
+    private userService:UserService
+    ){}
   ngOnInit():void{
     this.getCourses()
   }
@@ -66,5 +75,22 @@ export class CourseCatalogComponent implements OnInit {
       default:
         break;
     }
+  }
+
+  enrollUser( courseId:number, title:string){
+      console.log("in enroll function");
+     this.userService.enrollUser(this.userId,courseId).subscribe(data=>{
+      console.log("enrolled successfully", data);
+      this.totastMessage = `Enrolled in ${title} course successfully !!!`;
+      console.log("toast message", this.totastMessage)
+      this.showToast();
+     });
+  }
+
+  showToast(){
+    this.showMessage= true;
+    setTimeout(()=>{
+      this.showMessage= false;
+    }, 5000);
   }
 }

@@ -1,0 +1,66 @@
+.course-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+.course-box{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+    transition: width 0.3s, height 0.3s;
+    
+   
+}
+.heading{
+    text-align: center;
+    margin-bottom: 32px;
+}
+.card-info{
+    padding: 4px 16px;
+}
+.card-info > p{
+    line-height: 0.5;
+}
+
+.toast-message{
+    height: 40px;
+    padding: 8px;
+    width: auto;
+    /* border:1px solid black; */
+    background-color: rgb(30, 207, 30);
+    position: fixed;
+    right: 20px;
+    top:80px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+}
+
+.un-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.un-btn >button{
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 545;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.un-btn > button:hover{
+    background-color: hwb(27 2% 7%);
+    color: white;
+    border: none;
+}

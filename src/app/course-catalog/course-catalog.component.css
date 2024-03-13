@@ -1,0 +1,109 @@
+.page-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchInput{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    max-width: 100vw;
+    margin-bottom: 20px;
+    /* align-items: center; */
+    
+}
+.search-course{
+    width: 200px; /* Adjust width as needed */
+    padding: 8px 10px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+    border: none;
+    outline: none;
+
+}
+
+.search-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-right: 8px;
+
+}
+
+.filter-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.filter-buttons > button, .en-btn >button {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 545;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+.filter-buttons > button:hover, .en-btn >button:hover{
+    background-color: hwb(27 2% 7%);
+    color: white;
+    border: none;
+}
+
+.course-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+.course-box{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+    transition: width 0.3s, height 0.3s;
+    
+   
+}
+.card-info{
+    padding: 4px 16px;
+}
+.card-info > p{
+    line-height: 0.5;
+}
+.card-info > p>span{
+    font-weight: 600;
+}
+
+.en-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast-message{
+    height: 40px;
+    padding: 8px;
+    width: auto;
+    /* border:1px solid black; */
+    background-color: rgb(30, 207, 30);
+    position: fixed;
+    right: 20px;
+    top:80px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+}
