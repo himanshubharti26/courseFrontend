@@ -7,7 +7,7 @@ import { Injectable } from "@angular/core";
 export class CourseService {
     constructor(private http:HttpClient){}
 
-    baseUrl = "http://localhost:7000";
+    baseUrl = "https://newcoursebackend-1.onrender.com";
 
     getCourses(){
         return this.http.get(`${this.baseUrl}/course`);
