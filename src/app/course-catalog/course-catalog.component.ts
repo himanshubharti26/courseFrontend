@@ -20,7 +20,7 @@ export class CourseCatalogComponent implements OnInit {
   filteredCourses:Course[] = [];
   searchTerm:string = "";
   //we don't have login system that's why I am hard coding the user id
-  userId = "81d4b8cf-e198-4663-9447-059f40f0fb98"
+  userId = "156bfff1-2776-482e-821d-3f310e604557"
   showMessage:boolean = false;
   totastMessage:string = "";
 

@@ -1,14 +1,16 @@
 .course-container{
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     
 }
 
 .course-box{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
-    transition: width 0.3s, height 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: calc(24.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
     
    
 }
