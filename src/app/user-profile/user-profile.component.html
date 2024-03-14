@@ -1,25 +1,26 @@
 <div>
   <h2 class="heading">Enrolled Courses</h2>
   <div class="course-container">
-    
     <div *ngFor="let course of enrolledCourses" class="course-box">
       <div>
-        <img [src]="course.image" alt="{{ course.title }}">
+        <img [src]="course.image" alt="{{ course.title }}" height="100%" width="100%"/>
       </div>
       <div class="card-info">
-        <p>Title: {{course.title}}</p>
-        <p>Instructor: {{course.instructor}}</p>
-        <p>Rating: {{course.rating}}</p>
-        <p>Progress: {{course.progress}}</p>
+        <p>Title: {{ course.title }}</p>
+        <p>Instructor: {{ course.instructor }}</p>
+        <p>Rating: {{ course.rating }}</p>
+        <p>Progress: {{ course.progress }}</p>
         <div class="un-btn">
-          <button (click)="unEnrollUser(course.courseId, course.title)"> Unenroll </button>
-      </div>
+          <button (click)="unEnrollUser(course.courseId, course.title)">
+            Unenroll
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 @if(showMessage){
 <div class="toast-message">
-  <p>{{totastMessage}}</p>
+  <p>{{ totastMessage }}</p>
 </div>
 }
